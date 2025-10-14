@@ -29,4 +29,4 @@ Error generating stack: `+e.message+`
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
-  `})]})}var Jn=qn;function Yn(){return(0,k.jsx)(Zt,{children:(0,k.jsxs)(ht,{children:[(0,k.jsx)(pt,{path:`/test`,element:(0,k.jsx)(An,{})}),(0,k.jsx)(pt,{path:`/game`,element:(0,k.jsx)(jn,{})}),(0,k.jsx)(pt,{path:`/Snake`,element:(0,k.jsx)(Jn,{})})]})})}var Xn=Yn;wn.createRoot(document.getElementById(`root`)).render((0,k.jsx)(Zt,{basename:`/test/`,children:(0,k.jsx)(Xn,{})}));
+  `})]})}var Jn=qn;function Yn(){return(0,k.jsxs)(ht,{children:[(0,k.jsx)(pt,{path:`/test`,element:(0,k.jsx)(An,{})}),(0,k.jsx)(pt,{path:`/game`,element:(0,k.jsx)(jn,{})}),(0,k.jsx)(pt,{path:`/Snake`,element:(0,k.jsx)(Jn,{})})]})}var Xn=Yn;wn.createRoot(document.getElementById(`root`)).render((0,k.jsx)(Zt,{basename:`/test/`,children:(0,k.jsx)(Xn,{})}));
