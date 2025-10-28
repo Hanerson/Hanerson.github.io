@@ -13,29 +13,27 @@
 推荐类与方法（面向消费者）：
 
 ```java
+class AVLTree<K extends Comparable<K>, V> {
 
-    class AVLTree<K extends Comparable<K>, V> {
+    public V put(K key, V value); //插入或更新，返回旧值（若有）
 
-        public V put(K key, V value); //插入或更新，返回旧值（若有）
+    public V get(K key);
 
-        public V get(K key);
+    public boolean containsKey(K key);
 
-        public boolean containsKey(K key);
+    public V remove(K key); //删除并返回被删除的值
 
-        public V remove(K key); //删除并返回被删除的值
+    public int size();
 
-        public int size();
+    public List<K> inOrderKeys();
 
-        public List<K> inOrderKeys();
+    public void clear();
 
-        public void clear();
+    public boolean validateAVL();//验证 AVL 平衡性质（调试用）
 
-        public boolean validateAVL();//验证 AVL 平衡性质（调试用）
+    public boolean validateBST();//验证 BST 序
 
-        public boolean validateBST();//验证 BST 序
-
-    }
-
+}
 ```
 
 实现细节：
