@@ -1,6 +1,6 @@
 # BTree 实现源码详细注释分解
 
-本文件将上文完整的 `BTree` Java 实现按方法和注释分块，方便逐步理解其 B-树结构、查找与插入核心逻辑。
+本文件将上文完整的 BTree Java 实现按方法和注释分块，方便逐步理解其 B-树结构、查找与插入核心逻辑。
 
 ## 1. 类声明与基本成员
 
@@ -8,9 +8,10 @@
 public class BTree {
     private final int degree;      // 最小度数 t，决定节点最大/最小容量
     private BTreeNode root;        // 树的根节点
+}
 ```
-- `degree`：B树最小度数 t，决定每个节点最少/最多存储的 key 数量和子节点数量。t 必须 >= 2。
-- `root`：树的根节点，类型为 `BTreeNode`。
+- degree：B树最小度数 t，决定每个节点最少/最多存储的 key 数量和子节点数量。t 必须 >= 2。
+- root：树的根节点，类型为 BTreeNode。
 
 ---
 
@@ -72,7 +73,7 @@ public class BTree {
     }
 ```
 - 顺序查找键，判断是否命中或递归到子节点。
-- `children.size() == keys.size() + 1`。
+- children.size() == keys.size() + 1。
 
 ---
 
@@ -127,8 +128,8 @@ public class BTree {
         // 分裂完成：fullChild 和 newNode 均拥有 degree-1 个 key
     }
 ```
-- **前提**：分裂前 `fullChild` 必满（2t-1 个 key）。
-- 将 `fullChild` 的后半 key/children 移入新节点 `newNode`。
+- **前提**：分裂前 fullChild 必满（2t-1 个 key）。
+- 将 fullChild 的后半 key/children 移入新节点 newNode。
 - 中间 key “上升”至父亲节点，父亲孩子队列也多一个。
 - 分裂后原节点和新节点都不满，有利后续插入。
 
@@ -175,11 +176,11 @@ public class BTree {
 该实现遵循标准的 B-树查找与插入算法，支持高效动态分裂节点。由于未实现删除逻辑，保证了所有节点满足 B树的度数和有序性。
 
 **依赖说明**  
-- 需配合同包下的 `BTreeNode` 类使用，其通常定义为：
-  - `List<Integer> keys`：存储 keys
-  - `List<BTreeNode> children`：存储子节点
-  - `boolean isLeaf`：是否为叶子节点
+- 需配合同包下的 BTreeNode 类使用，其通常定义为：
+  - List<Integer> keys：存储 keys
+  - List<BTreeNode> children：存储子节点
+  - boolean isLeaf：是否为叶子节点
 
-> 注：如需补充 `BTreeNode` 的定义结构，可根据上述描述自行完善。
+  - 注：如需补充 BTreeNode 的定义结构，可根据上述描述自行完善。
 
 ---
